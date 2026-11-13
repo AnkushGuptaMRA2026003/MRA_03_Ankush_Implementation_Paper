@@ -1,0 +1,55 @@
+# .gitignore — AITR Lab02 Project
+
+# Environment
+.env
+*.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Model weights (too large to commit)
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+models/
+
+# Raw data and API cache (regenerate with scripts)
+data/cache/
+data/raw/
+*.jsonl.bak
+
+# Large result figures (keep standard paper figures)
+# results/figures/*.pdf
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+*.ipynb~
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# API keys — NEVER commit these
+*api_key*
+*secret*
+*token*

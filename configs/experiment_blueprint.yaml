@@ -1,0 +1,49 @@
+# Experiment Protocol (Pre-registered Blueprint)
+# Date frozen: 2026-11-13
+# DO NOT MODIFY after experiments begin
+
+experiment:
+  name: "LLM Knowledge Cutoff vs RAG — Citation Accuracy Study"
+  student: "Ankush Gupta (MRA2026003)"
+  date_frozen: "2026-11-13"
+
+model:
+  name: "meta-llama/Llama-3.1-8B-Instruct"
+  quantization: "4bit"
+  temperature: 0.3
+  max_new_tokens: 400
+  seed: 42
+
+rag:
+  retriever: "semantic_scholar_api"
+  top_k: 5
+  date_filter: "2020-2026"
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+evaluation:
+  metric: "Citation Accuracy Rate (CAR)"
+  formula: "CAR = (verified_citations) / (total_generated_citations)"
+  statistical_test: "Wilcoxon signed-rank test (paired, non-parametric)"
+  significance_threshold: 0.05
+  minimum_topics_for_valid_analysis: 20
+
+topics:
+  total: 30
+  bins:
+    pre_cutoff: 10    # Papers well-covered before 2023
+    near_cutoff: 10   # Papers from 2023 boundary
+    post_cutoff: 10   # Papers from 2024-2025
+
+stopping_rule: "If fewer than 20 topics complete (compute budget), report results as preliminary with reduced statistical power."
+
+baseline_prompt_template: |
+  Write a 200-word academic literature review on the topic: "{topic}".
+  Include exactly 5 citations in [Author et al., Year] format.
+  Focus on key papers from 2020 onwards.
+
+rag_prompt_template: |
+  Using the following recent papers as context:
+  {retrieved_papers}
+
+  Write a 200-word academic literature review on the topic: "{topic}".
+  Include exactly 5 citations in [Author et al., Year] format, preferring the provided papers.

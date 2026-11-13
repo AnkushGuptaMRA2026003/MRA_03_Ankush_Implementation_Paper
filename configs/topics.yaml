@@ -1,0 +1,36 @@
+topics:
+  pre_cutoff:
+    - "BERT and transformer-based text classification"
+    - "Knowledge graph embedding methods"
+    - "Neural machine translation with attention"
+    - "Graph neural networks for node classification"
+    - "Self-supervised learning for vision"
+    - "Federated learning for privacy-preserving ML"
+    - "Object detection with YOLO architecture"
+    - "Adversarial examples in deep learning"
+    - "Variational autoencoders for generation"
+    - "Meta-learning few-shot classification"
+
+  near_cutoff:
+    - "Large language model alignment techniques"
+    - "Chain-of-thought prompting in LLMs"
+    - "Retrieval-augmented generation systems"
+    - "Instruction fine-tuning of language models"
+    - "LLM hallucination detection methods"
+    - "Constitutional AI and RLHF"
+    - "Multimodal language models vision-language"
+    - "Parameter-efficient fine-tuning LoRA"
+    - "LLM knowledge cutoff and temporal generalization"
+    - "Automated literature review with LLMs"
+
+  post_cutoff:
+    - "LLM agent frameworks 2024"
+    - "Speculative decoding for LLM inference 2024"
+    - "Mixture of experts language models 2024"
+    - "LLM benchmark contamination detection 2025"
+    - "Reasoning models chain-of-thought 2025"
+    - "Knowledge cutoff benchmark datasets 2024"
+    - "Multimodal RAG systems 2024"
+    - "LLM citation hallucination mitigation 2024"
+    - "Open source LLM evaluation frameworks 2025"
+    - "Temporal knowledge graphs for LLMs 2024"
